@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2025-02-15T23:36:06+01:00",
+    "exported_at": "2025-02-15T23:42:49+01:00",
     "name": "PocketMine-MP",
     "author": "info@swisscrafting.ch",
     "description": "This is a PocketMin-MP Software with fixed Issues & Custom Plugins that are good for your server",
@@ -22,7 +22,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\napt-get update\r\napt-get install -y git curl wget jq file tar unzip zip\r\n\r\nmkdir -p \/mnt\/server\/\r\n\r\ncd \/mnt\/server || exit 1\r\n\r\nARCH=$([[ \"$(uname -m)\" == \"x86_64\" ]] && printf \"amd64\" || printf \"arm64\")\r\n\r\nVERSION=\"${VERSION:-PM5}\"\r\nVERSION=\"${VERSION^^}\"\r\n\r\nif [ ! -d \"bin\" ]; then\r\n    wget https:\/\/github.com\/lokiPM\/PterodactylEggFixer\/releases\/download\/PocketMine-MP\/PHP.zip\r\n    unzip PHP.zip\r\n    chmod +rwx bin\/\r\n    chmod +rwx bin\/php7\r\n    chmod +rwx bin\/php7\/bin\r\n    chmod +rwx bin\/php7\/bin\/php\r\n    echo \"PHP Installation Done!\"\r\nfi\r\n\r\nrm -rf PHP.zip\r\n\r\nversion=$(wget -qO- https:\/\/raw.githubusercontent.com\/lokiPM\/PterodactylEggFixer\/refs\/heads\/main\/PocketMine-MP\/version)\r\n\r\nif [ -f \"PocketMine-MP.phar\" ]; then\r\n    rm -f PocketMine-MP.phar\r\nfi\r\n\r\nwget \"https:\/\/github.com\/pmmp\/PocketMine-MP\/releases\/download\/$version\/PocketMine-MP.phar\"\r\n\r\n[[ ! -f server.properties ]] && wget https:\/\/raw.githubusercontent.com\/parkervcp\/eggs\/master\/game_eggs\/minecraft\/bedrock\/pocketmine_mp\/server.properties\r\n\r\ntouch banned-ips.txt banned-players.txt ops.txt white-list.txt server.log\r\nmkdir -p players worlds plugins resource_packs",
+            "script": "#!\/bin\/bash\r\n# Please remind its automatic removes the old PocketMine-MP.phar and installs the new one (latest)\r\n# made by lokiPM (aka lubro)\r\napt-get update\r\napt-get install -y git wget jq file tar unzip zip \r\n\r\nmkdir -p \/mnt\/server\/\r\n\r\ncd \/mnt\/server || exit 1\r\n\r\nARCH=$([[ \"$(uname -m)\" == \"x86_64\" ]] && printf \"amd64\" || printf \"arm64\")\r\n\r\nVERSION=\"${VERSION:-PM5}\"\r\nVERSION=\"${VERSION^^}\"\r\n\r\nif [ ! -d \"bin\" ]; then\r\n    wget https:\/\/github.com\/lokiPM\/PterodactylEggFixer\/releases\/download\/PocketMine-MP\/PHP.zip\r\n    unzip PHP.zip\r\n    chmod +rwx bin\/\r\n    chmod +rwx bin\/php7\r\n    chmod +rwx bin\/php7\/bin\r\n    chmod +rwx bin\/php7\/bin\/php\r\n    echo \"PHP Installation Done!\"\r\nfi\r\n\r\nrm -rf PHP.zip\r\n\r\nversion=$(wget -qO- https:\/\/raw.githubusercontent.com\/lokiPM\/PterodactylEggFixer\/refs\/heads\/main\/PocketMine-MP\/version)\r\n\r\nif [ -f \"PocketMine-MP.phar\" ]; then\r\n    rm -f PocketMine-MP.phar\r\nfi\r\n\r\nwget \"https:\/\/github.com\/pmmp\/PocketMine-MP\/releases\/download\/$version\/PocketMine-MP.phar\"\r\necho \"PocketMine-MP File installed!\"\r\n\r\n[[ ! -f server.properties ]] && wget https:\/\/raw.githubusercontent.com\/parkervcp\/eggs\/master\/game_eggs\/minecraft\/bedrock\/pocketmine_mp\/server.properties\r\n\r\ntouch banned-ips.txt banned-players.txt ops.txt white-list.txt server.log\r\nmkdir -p players worlds plugins resource_packs",
             "container": "ghcr.io\/parkervcp\/installers:debian",
             "entrypoint": "bash"
         }
