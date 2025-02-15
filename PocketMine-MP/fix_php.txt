@@ -1,7 +1,0 @@
-1. Download the PHP.gz from this https://github.com/lokiPM/PterodactylEggFixer/releases/tag/PocketMine-MP 
-
-2. Paste it into the Files on your Pterodactyl Server.
-
-3. Unzip it
-
-4. Start the Server
