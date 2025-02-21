@@ -24,7 +24,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y zip unzip wget\r\n\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\ncd mnt\/server\r\n\r\nwget \"https:\/\/github.com\/lokiPM\/PterodactylEggFixer\/releases\/download\/bedrock\/bedrock-server-1.21.60.10.zip\"\r\necho \"Server .zip Installation done!\"\r\nunzip -n bedrock-server-1.21.60.10.zip\r\nrm -rf bedrock-server-1.21.60.10.zip\r\nrm -rf bedrock_server_how_to.html\r\n\r\ncp server.properties server.properties.bak\r\ncp permissions.json permissions.json.bak\r\ncp allowlist.json allowlist.json.bak\r\nrm *.bak",
+            "script": "#!\/bin\/bash\r\n\r\napt update\r\napt install -y zip unzip wget\r\n\r\nif [ ! -d \/mnt\/server\/ ]; then\r\n    mkdir \/mnt\/server\/\r\nfi\r\n\r\ncd mnt\/server\r\n\r\nwget \"https:\/\/github.com\/lokiPM\/PterodactylEggFixer\/releases\/download\/bedrock\/bedrock-server-1.21.60.01.zip\"\r\necho \"Server .zip Installation done!\"\r\nunzip -n bedrock-server-1.21.60.10.zip\r\nrm -rf bedrock-server-1.21.60.10.zip\r\nrm -rf bedrock_server_how_to.html\r\n\r\ncp server.properties server.properties.bak\r\ncp permissions.json permissions.json.bak\r\ncp allowlist.json allowlist.json.bak\r\nrm *.bak",
             "container": "ghcr.io\/parkervcp\/installers:debian",
             "entrypoint": "bash"
         }
