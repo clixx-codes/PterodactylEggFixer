@@ -2,11 +2,6 @@
 
 version=$(wget -qO- https://raw.githubusercontent.com/lokiPM/PterodactylEggFixer/main/PocketMine-MP/version)
 
-if [ -z "$version" ]; then
-    echo "Fehler: Die Version konnte nicht geladen werden."
-    exit 1
-fi
-
 if [ -f "PocketMine-MP.phar" ]; then
     rm -f PocketMine-MP.phar
 fi
@@ -21,4 +16,4 @@ else
 fi
 
 cd /mnt/server/
-./bin/php7/bin/php ./PocketMine-MP.phar --no-wizard --disable-ansi
+nohup ./bin/php7/bin/php ./PocketMine-MP.phar --no-wizard --disable-ansi > output.log 2>&1 &
