@@ -20,5 +20,5 @@ else
     exit 1
 fi
 
-cd ~
+cd /mnt/server/
 ./bin/php7/bin/php ./PocketMine-MP.phar --no-wizard --disable-ansi
