@@ -19,6 +19,11 @@ The ultimate collection of fixed and enhanced Pterodactyl eggs for your game ser
 - 🔌 Plugin support
 - 🎨 Resource pack support
 
+### Nginx 🌐
+- ⚡ Fast & Easy
+- 🧩 Pre-configured settings
+- 🔥 HTML & PHP Support
+
 ## 🚀 Quick Start
 
 1. Choose your desired egg
