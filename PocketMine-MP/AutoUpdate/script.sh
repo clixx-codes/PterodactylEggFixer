@@ -15,5 +15,5 @@ else
     exit 1
 fi
 
-cd /mnt/server/
+cd 
 nohup ./bin/php7/bin/php ./PocketMine-MP.phar --no-wizard --disable-ansi > output.log 2>&1 &
