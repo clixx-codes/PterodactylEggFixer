@@ -37,7 +37,27 @@ The ultimate collection of fixed and enhanced Pterodactyl eggs for your game ser
 - 🔄 Easy backup support
 
 ### Coming Soon 🔜
-- 🌐 Nginx Server Support
+
+### Rust Server 🛠️
+- 🔄 Auto-updating version
+- ⚡ Performance optimized
+- 🛠️ Pre-configured settings
+- 🔒 Secure defaults
+- 🎮 Customizable game settings
+
+### ARK: Survival Evolved Server 🦖
+- 🔄 Auto-updating version
+- ⚡ Performance optimized
+- 🛠️ Pre-configured settings
+- 🔒 Secure defaults
+- 🎮 Customizable game settings
+
+### Valheim Server 🛡️
+- 🔄 Auto-updating version
+- ⚡ Performance optimized
+- 🛠️ Pre-configured settings
+- 🔒 Secure defaults
+- 🎮 Customizable game settings
 
 ## 🚀 Quick Start
 
