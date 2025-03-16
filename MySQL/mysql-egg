@@ -1,0 +1,52 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2025-03-15T11:00:00+01:00",
+    "name": "MySQL Database",
+    "author": "benjiknolle@gmail.com",
+    "description": "MySQL database server with configurable root password and automatic database creation",
+    "features": null,
+    "docker_images": {
+        "mysql:8.0": "mysql:8.0"
+    },
+    "file_denylist": [],
+    "startup": "mysqld --datadir=/home/container/mysql --port={{SERVER_PORT}} --bind-address=0.0.0.0",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"ready for connections\"\r\n}",
+        "logs": "{\r\n    \"custom\": false,\r\n    \"location\": \"logs/mysql.log\"\r\n}",
+        "stop": "mysqladmin -u root -p{{SERVER_PASSWORD}} shutdown"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n\r\ncd /home/container\r\n\r\n# Create MySQL directories\r\nmkdir -p mysql\r\nmkdir -p logs\r\n\r\n# Initialize MySQL data directory\nmysqld --initialize-insecure --datadir=/home/container/mysql\r\n\r\n# Start MySQL temporarily\nmysqld --datadir=/home/container/mysql --bind-address=0.0.0.0 &\r\n\r\n# Wait for MySQL to start\nsleep 10\r\n\r\n# Set root password and create database\nmysql -u root << EOF\r\nALTER USER 'root'@'localhost' IDENTIFIED BY '{{SERVER_PASSWORD}}';\r\nCREATE DATABASE {{DB_NAME}};\r\nEOF\r\n\r\n# Stop MySQL\nmysqladmin -u root shutdown",
+            "container": "mysql:8.0",
+            "entrypoint": "bash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Database Password",
+            "description": "Root password for MySQL server",
+            "env_variable": "SERVER_PASSWORD",
+            "default_value": "password",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|min:5",
+            "field_type": "text"
+        },
+        {
+            "name": "Database Name",
+            "description": "Name of the database to create",
+            "env_variable": "DB_NAME",
+            "default_value": "database",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|alpha_dash",
+            "field_type": "text"
+        }
+    ]
+}

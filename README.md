@@ -18,6 +18,24 @@ The ultimate collection of fixed and enhanced Pterodactyl eggs for your game ser
 - 🔌 Plugin support
 - 🎨 Resource pack support
 
+### Nginx Server 🌐
+- 📝 Easy configuration
+- 🔒 Secure defaults
+- 📊 Access logging
+- 🎯 Custom domains
+
+### Debian Server 💻
+- 🔧 Basic development tools
+- 📦 Package management
+- 🛠️ System utilities
+- 🖥️ Terminal access
+
+### MySQL Database 🗄️
+- 🔐 Secure password configuration
+- 📊 Automatic database creation
+- 💾 Data persistence
+- 🔄 Easy backup support
+
 ### Coming Soon 🔜
 - 🌐 Nginx Server Support
 
