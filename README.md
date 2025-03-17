@@ -24,7 +24,7 @@ The ultimate collection of fixed and enhanced Pterodactyl eggs for your game ser
 - 📊 Access logging
 - 🎯 Custom domains
 
-### Debian Server 💻
+### VPS Server 💻
 - 🔧 Basic development tools
 - 📦 Package management
 - 🛠️ System utilities
